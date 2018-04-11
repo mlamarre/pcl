@@ -44,8 +44,6 @@
 // #include <pcl/io/boost.h>
 #include <pcl/io/pcd_io.h>
 #include <pcl/io/ply_io.h>
-#include <pcl/io/ifs_io.h>
-// #include <pcl/io/vtk_io.h>
 
 namespace pcl
 {
@@ -60,9 +58,7 @@ namespace pcl
       if (extension == ".pcd")
         result = pcl::io::loadPCDFile (file_name, cloud);
       else if (extension == ".ply")
-        result = pcl::io::loadPLYFile (file_name, cloud);
-      else if (extension == ".ifs")
-        result = pcl::io::loadIFSFile (file_name, cloud);
+        result = pcl::io::loadPLYFile (file_name, cloud);      
       else
       {
         PCL_ERROR ("[pcl::io::load] Don't know how to handle file with extension %s", extension.c_str ());
@@ -81,8 +77,6 @@ namespace pcl
         result = pcl::io::savePCDFile (file_name, cloud, true);
       else if (extension == ".ply")
         result = pcl::io::savePLYFile (file_name, cloud, true);
-      else if (extension == ".ifs")
-        result = pcl::io::saveIFSFile (file_name, cloud);
       else
       {
         PCL_ERROR ("[pcl::io::save] Don't know how to handle file with extension %s", extension.c_str ());

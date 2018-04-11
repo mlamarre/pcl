@@ -211,7 +211,6 @@ if(build)
         src/lzf.cpp
         src/lzf_image_io.cpp
         src/obj_io.cpp
-        src/ifs_io.cpp
         src/image_grabber.cpp
         src/hdl_grabber.cpp
         src/vlp_grabber.cpp
@@ -260,7 +259,6 @@ if(build)
         "include/pcl/${SUBSYS_NAME}/tar.h"
         "include/pcl/${SUBSYS_NAME}/obj_io.h"
         "include/pcl/${SUBSYS_NAME}/ascii_io.h"
-        "include/pcl/${SUBSYS_NAME}/ifs_io.h"
         "include/pcl/${SUBSYS_NAME}/image_grabber.h"
         "include/pcl/${SUBSYS_NAME}/hdl_grabber.h"
         "include/pcl/${SUBSYS_NAME}/vlp_grabber.h"

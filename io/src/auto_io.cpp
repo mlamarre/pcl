@@ -39,7 +39,6 @@
 #include <pcl/io/boost.h>
 #include <pcl/io/pcd_io.h>
 #include <pcl/io/ply_io.h>
-#include <pcl/io/ifs_io.h>
 #include <pcl/io/obj_io.h>
 #include <pcl/io/vtk_io.h>
 
@@ -54,8 +53,6 @@ pcl::io::load (const std::string& file_name, pcl::PCLPointCloud2& blob)
     result = pcl::io::loadPCDFile (file_name, blob);
   else if (extension == ".ply")
     result = pcl::io::loadPLYFile (file_name, blob);
-  else if (extension == ".ifs")
-    result = pcl::io::loadIFSFile (file_name, blob);
   else if (extension == ".obj")
     result = pcl::io::loadOBJFile (file_name, blob);
   else
@@ -74,8 +71,6 @@ pcl::io::load (const std::string& file_name, pcl::PolygonMesh& mesh)
   int result = -1;
   if (extension == ".ply")
     result = pcl::io::loadPLYFile (file_name, mesh);
-  else if (extension == ".ifs")
-    result = pcl::io::loadIFSFile (file_name, mesh);
   else if (extension == ".obj")
     result = pcl::io::loadOBJFile (file_name, mesh);
   else
@@ -120,8 +115,6 @@ pcl::io::save (const std::string& file_name, const pcl::PCLPointCloud2& blob, un
     Eigen::Quaternionf orientation = Eigen::Quaternionf::Identity ();
     result = pcl::io::savePLYFile (file_name, blob, origin, orientation, true);
   }
-  else if (extension == ".ifs")
-    result = pcl::io::saveIFSFile (file_name, blob);
   else if (extension == ".vtk")
     result = pcl::io::saveVTKFile (file_name, blob, precision);
   else
